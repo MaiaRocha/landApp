@@ -57,7 +57,6 @@ class UserController extends Controller
             $user = User::with('constructions.wastes')->findOrFail($id);
             return response()->json($user, 200);
         } catch (Exception $e) {
-            return $e;
             return response()->json(['errors' => ['Erro ao listar o usuário']], 400);
         }
         
